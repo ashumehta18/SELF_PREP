@@ -1,0 +1,2 @@
+collision handling technique
+  
