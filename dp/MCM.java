@@ -23,5 +23,26 @@ example 4 marix are give a b c d apply brackets in such a way that cost multipli
   c2 = (a*b)*(c*d)
   c3 = (a*b*c) *d 
   like ways return minimum among these costs
+
+
+  class Solution {
+    static int matrixMultiplication(int p[]) {
+        int n = p.length;
+        int dp[][] = new int[n][n];
+      
+        for(int len = 2; len<=n ;len++){
+            for(int i = 1 ; i<= n-len ;i++){
+                int j = i+len-1;
+                dp[i][j] = Integer.MAX_VALUE;
+              
+                for(int k = i ;k<j;k++){
+                    int cost = dp[i][k] +dp[k+1][j] +p[i-1] * p[k]*p[j];
+                    dp[i][j] = Math.min(dp[i][j], cost);
+                }
+            }
+        }
+        return dp[1][n-1];
+    }
+}
   
  
