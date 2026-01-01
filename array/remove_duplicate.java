@@ -1,0 +1,17 @@
+https://www.geeksforgeeks.org/problems/remove-duplicate-elements-from-sorted-array/1
+
+class Solution {
+    // Function to remove duplicates from the given array.
+    ArrayList<Integer> removeDuplicates(int[] arr) {
+        // code here
+        ArrayList<Integer> list = new ArrayList<>();
+        list.add(arr[0]);
+        for(int i = 1 ;i<arr.length;i++){
+            if(arr[i-1] != arr[i]){
+                list.add(arr[i]);
+            }
+            
+        }
+        return list;
+    }
+}
