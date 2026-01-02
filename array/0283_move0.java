@@ -1,4 +1,24 @@
 https://leetcode.com/problems/move-zeroes/submissions/1868068685/
+https://www.geeksforgeeks.org/problems/move-all-zeroes-to-end-of-array0751/1
+
+
+//easy
+class Solution {
+    void pushZerosToEnd(int[] arr) {
+        // code here
+        int count = 0; //state count zero
+        for(int i = 0 ;i<arr.length ;i++){ //itterate
+            if(arr[i] != 0){ //if element non zero
+                int temp = arr[i]; //new varriable is equal to that non zero element
+                arr[i] = arr[count]; //non zero element is equal to 
+                arr[count] = temp ;
+                count++; //coutnter increased by 1each time
+            }
+        }
+    }
+}
+
+
 
 // brute force O(n)= move and shift { new array then copy non zero elemnts and then spaces left is filled with zero }
 //better O(n)= two pointer  and two pass  but space O(1)
